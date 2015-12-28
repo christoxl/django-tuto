@@ -86,7 +86,7 @@ DATABASES = {
         'HOST': 'christoxl.mysql.pythonanywhere-services.com',
         'TEST': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': 'test.db',
+            'NAME':  os.path.join(BASE_DIR, 'test.sqlite3'),
         },
 
     }
