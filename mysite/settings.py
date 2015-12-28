@@ -84,6 +84,10 @@ DATABASES = {
         'USER': 'christoxl',
         'PASSWORD': 'admin14',
         'HOST': 'christoxl.mysql.pythonanywhere-services.com',
+        'TEST': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'test.db',
+        },
 
     }
 }
