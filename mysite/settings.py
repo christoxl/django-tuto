@@ -84,7 +84,13 @@ DATABASES = {
         'USER': 'christoxl',
         'PASSWORD': 'admin14',
         'HOST': 'christoxl.mysql.pythonanywhere-services.com',
-        'TEST_NAME': 'christoxl$test',
+        'TEST': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'christoxl$test',
+            'USER': 'christoxl',
+            'PASSWORD': 'admin14',
+            'HOST': 'christoxl.mysql.pythonanywhere-services.com',
+        },
 
     }
 }
