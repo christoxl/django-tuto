@@ -122,5 +122,5 @@ class QuestionIndexDetailTests(TestCase):
         :return:
         """
         past_question = create_question(question_text="Past question.", days=-30)
-        response = self.client.get(reverse('polls:detail', args=(future_question.id,)))
+        response = self.client.get(reverse('polls:detail', args=(past_question.id,)))
         self.assertContains(response, past_question.question_text, status_code=200)
