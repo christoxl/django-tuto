@@ -9,7 +9,7 @@ class Municipio(models.Model):
     nombre = models.CharField(max_length=70)
 
     class Meta:
-        ordering = ['nombre']
+        ordering = ('nombre',)
 
     def __str__(self):
         return self.nombre
