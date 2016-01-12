@@ -11,7 +11,7 @@ class Municipio(models.Model):
     def __str__(self):
         return self.nombre
 
-
+@python_2_unicode_compatible
 class Obra(models.Model):
     municipio = models.ForeignKey(Municipio, on_delete=models.CASCADE)
     descripcion = models.TextField()
