@@ -21,7 +21,7 @@ class Obra(models.Model):
     beneficiarios_mujeres = models.IntegerField(default=0)
 
     class Meta:
-        ordering = ['nombre']
+        ordering = ['municipio']
 
     def __str__(self):
         return self.descripcion
