@@ -14,7 +14,7 @@ class Municipio(models.Model):
 
 class Obra(models.Model):
     municipio = models.ForeignKey(Municipio, on_delete=models.CASCADE)
-    descripcion = models.CharField(max_length=800)
+    descripcion = models.TextField()
     inversion_ejercida = models.DecimalField(max_digits=20, decimal_places=2)
     avance = models.DecimalField(max_digits=5, decimal_places=2)
     beneficiarios_hombres = models.IntegerField(default=0)
