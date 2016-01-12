@@ -5,7 +5,7 @@ from .models import Municipio, Obra
 
 
 class ObraAdmin(admin.ModelAdmin):
-    ordering = ('municipios',)
+    ordering = ['municipios',]
 
 admin.site.register(Municipio)
 admin.site.register(Obra, ObraAdmin)
