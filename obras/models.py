@@ -8,7 +8,7 @@ from django.utils.encoding import python_2_unicode_compatible
 @python_2_unicode_compatible
 class Municipio(models.Model):
     nombre = models.CharField(max_length=70)
-    region = models.CharField(max_length=300)
+    region = models.CharField(max_length=300, default='')
 
     class Meta:
         ordering = ['nombre']
