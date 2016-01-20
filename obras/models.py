@@ -19,14 +19,22 @@ class Municipio(models.Model):
 
 @python_2_unicode_compatible
 class Obra(models.Model):
-    # municipio = models.ForeignKey(Municipio, on_delete=models.CASCADE)
     municipios = models.ManyToManyField(Municipio)
+    dependencia = models.ForeignKey(Dependencia, on_delete=models.CASCADE)
     descripcion = models.TextField()
-    dependencia = models.CharField(max_length=100)
     inversion_ejercida = models.DecimalField(max_digits=20, decimal_places=2)
     avance = models.DecimalField(max_digits=5, decimal_places=2)
+    estatus = models.CharField(max_length=50)
     beneficiarios_hombres = models.IntegerField(default=0)
     beneficiarios_mujeres = models.IntegerField(default=0)
 
     def __str__(self):
         return self.descripcion
+
+
+@python_2_unicode_compatible
+class Dependencia(models.Model):
+    nombre = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.nombre
