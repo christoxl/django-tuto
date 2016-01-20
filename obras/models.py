@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
 from django.db import models
@@ -27,12 +28,17 @@ class Dependencia(models.Model):
 
 @python_2_unicode_compatible
 class Obra(models.Model):
+    ESTATUS_CHOICES = (
+        ('En Ejecución', 'En Ejecución'),
+        ('Concluída', 'Concluída'),
+    )
+
     municipios = models.ManyToManyField(Municipio)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.CASCADE)
     descripcion = models.TextField()
     inversion_ejercida = models.DecimalField(max_digits=20, decimal_places=2)
     avance = models.DecimalField(max_digits=5, decimal_places=2)
-    estatus = models.CharField(max_length=50, null=True, blank=True)
+    estatus = models.CharField(max_length=50, null=True, blank=True, choices=ESTATUS_CHOICES)
     beneficiarios_hombres = models.IntegerField(default=0)
     beneficiarios_mujeres = models.IntegerField(default=0)
 
