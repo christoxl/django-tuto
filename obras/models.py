@@ -32,7 +32,6 @@ class Obra(models.Model):
         ('En Ejecución', 'En Ejecución'),
         ('Concluída', 'Concluída'),
     )
-
     municipio = models.ForeignKey(Municipio, on_delete=models.CASCADE)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.CASCADE)
     descripcion = models.TextField()
