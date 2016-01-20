@@ -32,7 +32,8 @@ class Obra(models.Model):
         ('En Ejecución', 'En Ejecución'),
         ('Concluída', 'Concluída'),
     )
-    municipio = models.ForeignKey(Municipio, on_delete=models.CASCADE)
+
+    municipios = models.ManyToManyField(Municipio)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.CASCADE)
     descripcion = models.TextField()
     inversion_ejercida = models.DecimalField(max_digits=20, decimal_places=2)
