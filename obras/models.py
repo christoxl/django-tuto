@@ -32,7 +32,7 @@ class Obra(models.Model):
     descripcion = models.TextField()
     inversion_ejercida = models.DecimalField(max_digits=20, decimal_places=2)
     avance = models.DecimalField(max_digits=5, decimal_places=2)
-    estatus = models.CharField(max_length=50, null=True)
+    estatus = models.CharField(max_length=50, null=True, default="")
     beneficiarios_hombres = models.IntegerField(default=0)
     beneficiarios_mujeres = models.IntegerField(default=0)
 
