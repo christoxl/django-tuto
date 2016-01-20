@@ -18,6 +18,14 @@ class Municipio(models.Model):
 
 
 @python_2_unicode_compatible
+class Dependencia(models.Model):
+    nombre = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.nombre
+
+
+@python_2_unicode_compatible
 class Obra(models.Model):
     municipios = models.ManyToManyField(Municipio)
     dependencia = models.ForeignKey(Dependencia, on_delete=models.CASCADE)
@@ -30,11 +38,3 @@ class Obra(models.Model):
 
     def __str__(self):
         return self.descripcion
-
-
-@python_2_unicode_compatible
-class Dependencia(models.Model):
-    nombre = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.nombre
