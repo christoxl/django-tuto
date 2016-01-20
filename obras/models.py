@@ -19,7 +19,8 @@ class Municipio(models.Model):
 
 @python_2_unicode_compatible
 class Obra(models.Model):
-    municipio = models.ForeignKey(Municipio, on_delete=models.CASCADE)
+    # municipio = models.ForeignKey(Municipio, on_delete=models.CASCADE)
+    municipios = models.ManyToMany(Municipio)
     descripcion = models.TextField()
     dependencia = models.CharField(max_length=100)
     inversion_ejercida = models.DecimalField(max_digits=20, decimal_places=2)
